@@ -1,3 +1,4 @@
+<?php include ('includes/database.php'); ?>
 <?php include ('includes/header.php'); ?>
 	<h2>Add A Question</h2>
 	<form method="post" action="add.php">

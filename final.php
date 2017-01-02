@@ -1,3 +1,4 @@
+<?php include ('includes/database.php'); ?>
 <?php include ('includes/header.php'); ?>
 				<h2>You're Done!</h2>
 				<p>Congrats! You have completed the test</p>
