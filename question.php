@@ -2,6 +2,14 @@
 <?php 
 	//Set question number
 	$number = (int) $_GET['n'];
+
+	/*
+	*Get total Questions
+	*/
+	$query = "SELECT * FROM `questions`";
+	//Get Results
+	$results =$mysqli->query($query) or die($mysqli->error.__LINE__);
+	$total = $results->num_rows;
 	
 	/*
 	*	Get Question
@@ -22,7 +30,7 @@
 	
 ?>
 <?php include ('includes/header.php'); ?>
-				<div class="current">Question 1 of 5</div>
+				<div class="current">Question <?php echo $question['question_number'] ?> of <?php echo $total; ?></div>
 				<p class="question">
 					<?php echo $question['text']; ?>
 				</p>
@@ -34,6 +42,7 @@
 						<?php endwhile ?>
 					</ul>
 					<input type="submit" value="submit">
+					<input type="hidden" name="number" value="<?php echo $number; ?>" />
 
 				</form>
 
